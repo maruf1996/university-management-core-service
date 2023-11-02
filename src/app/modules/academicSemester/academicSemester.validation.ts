@@ -20,4 +20,14 @@ const create = z.object({
   }),
 });
 
-export const AcademicSemesterValidation = { create };
+const update = z.object({
+  body: z.object({
+    title: z.string().optional(),
+    year: z.string().optional(),
+    code: z.string().optional(),
+    startMonth: z.string().optional(),
+    endMonth: z.string().optional(),
+  }),
+});
+
+export const AcademicSemesterValidation = { create, update };
